@@ -276,7 +276,7 @@
                         "
                         v-if="asset.coin !== 'USDT' && asset.coin !== 'USD'"
                       >
-                        AlgoTrade
+                       <!-- AlgoTrade-->
                       </button>
                       <!--<button class="btn color-primary">Earn</button>-->
                     </div>
