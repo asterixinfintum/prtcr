@@ -18,7 +18,7 @@ import User from './models/user';
 const app = express();
 const server = http.createServer(app);
 
-const allowlist = ["http://localhost:3000", 'https://quantcrudo.crudoprotocol.fi'];
+const allowlist = ["http://localhost:3000", "https://quantcrudo.crudoprotocol.fi"];
 
 const corsOptionsDelegate = (req, callback) => {
     let corsOptions;
@@ -40,7 +40,7 @@ const io = socket(server, {
         origin: [`${process.env.baseurl}`, `${process.env.wwwbaseurl}`],
         methods: ["GET", "POST"],
         allowedHeaders: ["Authorization"],
-        credentials: true
+        credentials: true 
     }
 });
 
