@@ -13,7 +13,7 @@ import cron from "node-cron";
 const app = express();
 const server = http.createServer(app);
 
-const allowlist = ["http://localhost:3000", 'https://crudoprotocol.fi', 'https://www.crudoprotocol.fi'];
+const allowlist = ["http://localhost:3000", 'https://quantcrudo.crudoprotocol.fi'];
 
 const corsOptionsDelegate = (req, callback) => {
   let corsOptions;
