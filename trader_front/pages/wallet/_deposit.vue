@@ -35,7 +35,7 @@
                       <div class="walletdeposit__networklist">
                         <div class="walletdeposit__networkarea">
                           <label class="label">BTC</label>
-                          <label class="name">Bitcoin Network</label>
+                          <label class="name">Ethereum Network</label>
                         </div>
                       </div>
                     </div>
