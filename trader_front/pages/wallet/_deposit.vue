@@ -21,11 +21,11 @@
                     <div class="walletdeposit__select walletdeposit__selected">
                       <div class="walletdeposit__selectarea selected">
                         <figure class="selected-img">
-                          <img src="@/assets/imgs/btc.png" />
+                          <img src="@/assets/imgs/tether-usdt-logo-FA55C7F397-seeklogo.com.png" />
                         </figure>
-                        <label class="selected-symbol">BTC</label>
+                        <label class="selected-symbol">USDT</label>
 
-                        <label class="selected-name">Bitcoin</label>
+                        <label class="selected-name">USDT</label>
                       </div>
                     </div>
 
@@ -34,7 +34,7 @@
                     <div class="walletdeposit__selectednetwork">
                       <div class="walletdeposit__networklist">
                         <div class="walletdeposit__networkarea">
-                          <label class="label">BTC</label>
+                          <label class="label">ETH</label>
                           <label class="name">Ethereum Network</label>
                         </div>
                       </div>
