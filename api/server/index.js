@@ -13,14 +13,14 @@ import cron from "node-cron";
 const app = express();
 const server = http.createServer(app);
 
-const allowlist = ["http://localhost:3000", "https://quantcrudo.crudoprotocol.fi"];
+const allowlist = ["http://localhost:3000", 'https://bvxtrade.com', 'https://www.bvxtrade.com'];
 
 const corsOptionsDelegate = (req, callback) => {
   let corsOptions;
 
   let isDomainAllowed = allowlist.indexOf(req.header('Origin')) !== -1;
 
-  if (isDomainAllowed) { 
+  if (isDomainAllowed) {
     corsOptions = { origin: true }
   } else {
     corsOptions = { origin: false }

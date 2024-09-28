@@ -41,14 +41,18 @@ export default {
         "The section titles in the terms of service are for convenience only and have no legal or contractual effect.",
 
         "You acknowledge and agree that all content and information on the site is protected by proprietary rights and laws. You agree not to copy, distribute, reproduce, or create derivative works from any part of the service or the site without the express authorization of the company.",
-        
-        "Please be advised that, in accordance with our financial policies, a mandatory fee amounting to 15% of the total value is applicable and required to be settled promptly at the point of initiating a withdrawal. This charge is part of our structured financial terms to ensure a smooth and efficient transaction process.",
 
         "The service may include links to other websites not owned or controlled by us. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites. You acknowledge and agree that we shall not be responsible for any loss or damage caused by the use of any such content available on or through any such sites or services.",
 
-        "For withdrawals from $5,000 to $10,000, the Account Holder agrees to pay a fee of 5% of the withdrawal amount upfront. For withdrawals from $15,000 to $20,000, the Account Holder agrees to pay a fee of 10% of the withdrawal amount upfront. For withdrawals from $20,000 to $30,000, the Account Holder agrees to pay a fee of 15% of the withdrawal amount upfront.",
+        "The Company generates revenue exclusively from withdrawal fees, which are set at a standard rate of 10% of the withdrawal amount. Clients are required to pay this 10% fee upfront before any withdrawal is processed, for the following reasons: \nIn the past, some clients have initiated legal action against the Company after transaction fees were deducted from their trading accounts. Additionally, some clients who requested to pay the fees after withdrawal failed to fulfill their payment obligations, leaving the fees unpaid.\n To prevent such issues, the Company now mandates the upfront payment of the 10% withdrawal fee.",
 
         "We may terminate your access to the site, without cause or notice, which may result in the forfeiture and destruction of all information associated with your account. All provisions of this agreement that by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.",
+
+        "Account closure requires a minimum of 21 completed trades to ensure liquidity remains locked long enough for the software to execute automated trades across various assets and asset classes based on indicator-driven strategies.",
+
+        "A certain deposit threshold must be met to qualify for borrowing margin and utilizing additional leverage.",
+
+        "Certain trades require clients to meet specific deposit requirements to participate.",
 
         "The service is controlled and operated from its facilities in its country of origin. We make no representations that the service is appropriate or available for use in other locations. Those who access or use the service from other jurisdictions do so at their own volition and are responsible for compliance with local law.",
 
@@ -63,7 +67,6 @@ export default {
         "We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.",
 
         "By continuing to access or use our service after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the service.",
-        
       ],
     };
   },

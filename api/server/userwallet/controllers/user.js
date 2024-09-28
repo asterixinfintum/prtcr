@@ -2,6 +2,8 @@ import express from 'express';
 
 import authenticateToken from '../../utils/authenticateToken';
 
+import User from '../../models/user';
+import Asset from '../../models/asset';
 import UserWallet from '../models/wallet';
 import Withdrawalrequest from '../models/withdrawalrequest';
 import Transaction from '../models/transaction';
@@ -44,6 +46,43 @@ userwalletuser.get('/userwallet/wallet', authenticateToken, async (req, res) => 
         } catch (error) {
             console.log(error)
             res.status(500).send({ error: 'error finding walet' });
+        }
+    }
+});
+
+userwalletuser.get('/userwallet/margindashboard', authenticateToken, async (req, res) => {
+    if (req.user && req.user._id) {
+        try {
+            const { userid } = req.query;
+
+            if (!userid) {
+                res.status(500).send({ error: 'there must be a userid present' });
+                return;
+            }
+
+            const btcAsset = await Asset.findOne({ name: "Bitcoin" });
+
+            const { price } = btcAsset;
+
+
+            const useritem = await User.findById({ _id: userid });
+
+            const { tradeaccountdebt, tradeaccountmargin, tradeaccountequity } = useritem.tailoreddashboard;
+
+            const tradeaccountdebtInBtc = (tradeaccountdebt / price).toFixed(7);
+            const tradeaccountmarginInBtc = (tradeaccountmargin / price).toFixed(7);
+            const tradeaccountequityInBtc = (tradeaccountequity / price).toFixed(7);
+
+            res.status(200).json({
+                tradeaccountdebtInBtc, 
+                tradeaccountmarginInBtc,
+                tradeaccountequityInBtc,
+                tradeaccountequity,
+                tradeaccountdebt,
+                tradeaccountmargin
+            })
+        } catch (error) {
+            res.status(500).send({ error: 'error getting wallets' });
         }
     }
 });
@@ -113,7 +152,9 @@ userwalletuser.post('/userwallet/request/withdraw', authenticateToken, async (re
                 walletid: req.body.wallet,
                 amountusd: req.body.usdamount,
                 bank: req.body.Bank,
-                account: req.body.Account
+                account: req.body.Account,
+                cryptoaddress: req.body.cryptoaddress,
+                paypalemail: req.body.paypalemail,
             }
 
             const newwithdrawalrequest = new Withdrawalrequest(withdrawalrequest);
@@ -122,6 +163,7 @@ userwalletuser.post('/userwallet/request/withdraw', authenticateToken, async (re
 
             res.status(200).send({ message: 'withdrawal request processing' })
         } catch (error) {
+            console.log(error)
             res.status(500).send({ error: 'error processing request' });
         }
     }
@@ -134,7 +176,7 @@ userwalletuser.get('/userwallet/transactions/', authenticateToken, async (req, r
 
             const transactions = await Transaction.find({ userid });
 
-            res.status(200).send({ transactions})
+            res.status(200).send({ transactions })
         } catch (error) {
             res.status(500).send({ error: 'error getting transactions' });
         }
