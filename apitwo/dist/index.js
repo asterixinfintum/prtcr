@@ -22,7 +22,7 @@ var _require = require('date-fns'),
   formatDistanceToNow = _require.formatDistanceToNow;
 var app = (0, _express["default"])();
 var server = _http["default"].createServer(app);
-var allowlist = ["http://localhost:3000", "https://quantcrudo.crudoprotocol.fi"];
+var allowlist = [process.env.baseurl, process.env.wwwbaseurl];
 var corsOptionsDelegate = function corsOptionsDelegate(req, callback) {
   var corsOptions;
   var isDomainAllowed = allowlist.indexOf(req.header('Origin')) !== -1;

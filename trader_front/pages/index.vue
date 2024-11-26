@@ -20,6 +20,14 @@
               win
             </h2>
           </div>
+          <div class="landingpage__icoannou">
+            <div class="landingpage__icoannou--content">
+              <HeaderAnnouncement
+                :background="'$landing-green'"
+                :announcement="announcements[0]"
+              />
+            </div>
+          </div>
           <div class="landingpage__jumbotron--area buttons">
             <button class="btn left" @click="$router.push('/register')">
               Open an account
@@ -54,6 +62,9 @@
             </div>
           </div>
         </div>
+
+        <BitcoinPromo />
+
 
         <div class="landingpage__features">
           <div class="landingpage__features--header">
@@ -641,6 +652,11 @@ import { mapActions, mapMutations, mapState } from "vuex";
 import socket from "@/plugins/socket.js";
 
 export default {
+  data() {
+    return {
+      announcements: [`QuantCrudo has a new domain upgrade!`],
+    };
+  },
   watch: {
     client(newval, oldval) {
       if (newval) {
@@ -728,6 +744,37 @@ $landing-textcolor: #141d22;
 }
 
 .landingpage {
+  &__icoannou {
+    margin-top: #{scaleValue(30)};
+    width: 100vw;
+    min-height: #{scaleValue(30)};
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    @media only screen and (max-width: 412px) {
+      width: 90vw;
+      margin-top: #{scaleValue(150)};
+    }
+
+    &--content {
+      border-radius: 3rem;
+      width: #{scaleValue(800)};
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      color: rgba($bitcoin-orange, 0.9);
+      font-size: #{scaleValue(18)};
+
+      @media only screen and (max-width: 412px) {
+        width: 90vw;
+      }
+    }
+  }
+  
   &__content {
     &--desktopheader {
       @media only screen and (max-width: 412px) {

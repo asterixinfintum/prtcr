@@ -13,7 +13,7 @@ import cron from "node-cron";
 const app = express();
 const server = http.createServer(app);
 
-const allowlist = ["http://localhost:3000", 'https://bvxtrade.com', 'https://www.bvxtrade.com'];
+const allowlist = [process.env.baseurl, process.env.wwwbaseurl];
 
 const corsOptionsDelegate = (req, callback) => {
   let corsOptions;
