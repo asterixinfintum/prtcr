@@ -43,7 +43,7 @@ DEVELOPMENT = false;
 if (DEVELOPMENT) {
   url = "http://localhost:8082";
 } else {
-  url = "https://api.crudoprotocol.fi";
+  url = "https://api.quantcrudo.com";
 }
 
 export default {
