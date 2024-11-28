@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="popup">
+        <div class="popup 32vw">
             <div class="popup__body transactionstyle__body">
                 <div class="transactionstyle__subject">
                     <div></div>
