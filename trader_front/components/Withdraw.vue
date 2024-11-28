@@ -192,7 +192,7 @@
           <div v-if="addressinputopen && !withdrawdetails">
             <div class="auth__inputarea">
               <label class="auth__inputarea--label">
-                <p>Bank</p>
+                <p>Network</p>
                 <p>*</p>
               </label>
               <span class="auth__inputarea--input withdrawal">
@@ -202,7 +202,7 @@
 
             <div class="auth__inputarea">
               <label class="auth__inputarea--label">
-                <p>Account</p>
+                <p>Crypto Address</p>
                 <p>*</p>
               </label>
               <span class="auth__inputarea--input withdrawal">
