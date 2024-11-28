@@ -8,6 +8,7 @@
     &__body {
         @include popup-body;
         background: rgba($index-body, .8);
+        transform: translateY(-4rem);
     }
 
     &__close {
