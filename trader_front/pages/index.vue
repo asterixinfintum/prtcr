@@ -63,8 +63,6 @@
           </div>
         </div>
 
-        <BitcoinPromo />
-
 
         <div class="landingpage__features">
           <div class="landingpage__features--header">
