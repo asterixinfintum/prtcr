@@ -639,6 +639,8 @@
               Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia,
               Slovenia, Spain, Sweden.
             </p>
+
+            <p>Contact: support@quantcrudo.com</p>
           </div>
         </div>
       </div>
