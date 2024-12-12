@@ -71,7 +71,7 @@
           >
             Blog
           </div>
-          
+
           <div
             class="trader__header--menuitem"
             :class="{ current: currentpage.includes('accountplans') }"
@@ -93,7 +93,6 @@
           >
             Spot wallet
           </div>
-          
         </div>
       </div>
 
@@ -130,7 +129,10 @@
           >
             Log out
           </div>
-          <div class="trader__header--menuitem menuitembtn" @click="$router.push(`/wallet/fiatandspot`)">
+          <div
+            class="trader__header--menuitem menuitembtn"
+            @click="$router.push(`/wallet/fiatandspot`)"
+          >
             <span>
               <svg
                 viewBox="0 0 24 24"
@@ -394,7 +396,8 @@ export default {
   },
   methods: {
     triggerlogout() {
-      const { logout } = this;
+      const { logout, client } = this;
+      socket.emit("clientloggedout", { clientid: client._id });
       logout().then(() => this.$router.push("/"));
     },
     scrollToDiv(mydivid) {

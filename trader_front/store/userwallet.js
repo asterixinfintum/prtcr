@@ -151,7 +151,7 @@ export const actions = {
             const { walletbalance } = data;
             const { walletassets_list, usdtotal, btctotal, total } = walletbalance;
 
-            console.log('btctotal:', btctotal);
+           // console.log('btctotal:', btctotal);
 
             commit('SET_USERWALLETSLIST', walletassets_list);
             commit('SET_USERWALLETSUSDTOTAL', usdtotal);

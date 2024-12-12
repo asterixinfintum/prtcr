@@ -40,7 +40,7 @@ const io = socket(server, {
         origin: [`${process.env.baseurl}`, `${process.env.wwwbaseurl}`],
         methods: ["GET", "POST"],
         allowedHeaders: ["Authorization"],
-        credentials: true 
+        credentials: true
     }
 });
 
@@ -68,6 +68,36 @@ function initSocketIO() {
                 );
 
                 io.emit('updateclientonlinestate', { userid: socket.clientid });
+            }
+        });
+
+        socket.on('clientloggedout', async (data) => {
+            console.log('User disconnected now', data);
+            socket.clientid = data.clientid;
+
+            const client = await User.findOne({ _id: socket.clientid });
+
+            if (client) {
+                await User.findOneAndUpdate(
+                    { _id: socket.clientid },
+                    {
+                        $set: {
+                            online: false,
+                            lastOnline: new Date()
+                        }
+                    },
+                    { new: true }
+                );
+
+                //await updateUserLastOnlineAgo(socket.clientid);
+
+                io.emit('updateclientonlinestate', { userid: socket.clientid });
+
+                socket.clientid = null;
+                socket.token = null;
+
+                console.log(socket.clientid, socket.token);
+                console.log('User disconnected now');
             }
         });
 
